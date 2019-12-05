@@ -44,7 +44,7 @@ export class DayEditComponent implements OnInit {
         Goal: this.editForm.value.Goal,  
     };
     this.dayService.updateDay(updatedDay).subscribe(() => {
-     this.router.navigate(['/notes']);
+     this.router.navigate(['/goals']);
   });
 }
 }

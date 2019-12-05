@@ -30,6 +30,6 @@ export class DayCreateComponent implements OnInit {
     this.dayService.createDay(this.dayForm.value).subscribe(() => {
       this.router.navigate(['/days']);
     })
-  }
+  } 
 
 }

@@ -26,8 +26,6 @@ import { DayCreateComponent } from './components/day/day-create/day-create.compo
 import { OutfitCreateComponent } from './components/outfit/outfit-create/outfit-create.component';
 import { GoalCreateComponent } from './components/goal/goal-create/goal-create.component';
 import { DayDetailComponent } from './components/day/day-detail/day-detail.component';
-import { OutfitDetailComponent } from './components/outfit/outfit-detail/outfit-detail.component';
-import { GoalDetailComponent } from './components/goal/goal-detail/goal-detail.component';
 import { DayEditComponent } from './components/day/day-edit/day-edit.component';
 import { OutfitEditComponent } from './components/outfit/outfit-edit/outfit-edit.component';
 import { GoalEditComponent } from './components/goal/goal-edit/goal-edit.component';
@@ -52,7 +50,6 @@ const routes = [
   path: 'outfits', canActivate: [AuthGuard], children: [
 
     {path: 'create', component: OutfitCreateComponent},
-    {path: 'detail/:id', component: OutfitDetailComponent},
     {path: 'edit/:id', component: OutfitEditComponent},
     {path: 'delete/:id', component: OutfitDeleteComponent},
   ]
@@ -60,7 +57,6 @@ const routes = [
  {
   path: 'goals', canActivate: [AuthGuard], children: [
     {path: 'create', component: GoalCreateComponent},
-    {path: 'detail/:id', component: GoalDetailComponent},
     {path: 'edit/:id', component: GoalEditComponent},
     {path: 'delete/:id', component: GoalDeleteComponent},
 ]
@@ -78,8 +74,6 @@ const routes = [
     OutfitCreateComponent,
     GoalCreateComponent,
     DayDetailComponent,
-    OutfitDetailComponent,
-    GoalDetailComponent,
     DayEditComponent,
     OutfitEditComponent,
     GoalEditComponent,

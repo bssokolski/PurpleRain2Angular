@@ -26,7 +26,7 @@ export class DayDeleteComponent implements OnInit {
 
   onDelete(){
     this.dayService.deleteDay(this.day.DayID).subscribe(()=> {
-      this.router.navigate(['/notes']);
+      this.router.navigate(['/days']);
     });
   }
 }
