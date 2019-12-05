@@ -1,0 +1,51 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/days/create">New Day</a>
+<br>
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames"></mat-row>
+    </mat-table>
+</div>
+
+<ng-container matColumnDef="details">
+    <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+    <mat-cell *matCellDef="let day"> 
+        <i class="material-icons" routerLink="/days/detail/{{days.DayID}}">library_books</i>
+    </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="DayID">
+    <mat-header-cell *matHeaderCellDef>Day #</mat-header-cell>
+    <mat-cell *matCellDef="let day">{{day.DayID}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Date">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let day">{{day.Date}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Outfit">
+    <mat-header-cell *matHeaderCellDef>Outfit</mat-header-cell>
+    <mat-cell *matCellDef="let Day">{{day.Outfit}}</mat-cell>
+    <a mat-raised-button color="primary" routerLink="/outfits/create">New Outfit</a>
+    <i mat-icon class="material-icons" routerLink="/outfits/edit/{{outfit.OutfitID}}">edit</i>
+    <i class="material-icons" routerLink="/outfits/delete/{{outfit.OutfitID}}">delete</i>
+</ng-container>
+
+<ng-container matColumnDef="Goal">
+    <mat-header-cell *matHeaderCellDef>Goal</mat-header-cell>
+    <mat-cell *matCellDef="let day">{{day.Goal}}</mat-cell>
+    <a mat-raised-button color="primary" routerLink="/goals/create">New Goal</a>
+    <i mat-icon class="material-icons" routerLink="/goals/edit/{{goal.GoalID}}">edit</i>
+    <i class="material-icons" routerLink="/goals/delete/{{goal.GoalID}}">delete</i>
+</ng-container>
+
+<ng-container matColumnDef="buttons">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let day">
+        <i mat-icon class="material-icons" routerLink="/days/edit/{{day.DayID}}">edit</i>
+        <i class="material-icons" routerLink="/days/delete/{{day.DayID}}">delete</i>
+    </mat-cell>
+</ng-container>

@@ -3,9 +3,9 @@ import {RegisterUser} from '../models/RegisterUser';
 import {HttpClient, HttpHeaders} from'@angular/common/http';
 import { Token } from '../models/Token';
 import {Router} from '@angular/router';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 
-//const Api_Url;
+const Api_Url = 'https://localhost:44383';  // placeholder
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/']);
+      this.router.navigate(['/days']);
     });  
   }
   currentUser(): Observable<Object> {
@@ -48,4 +48,4 @@ export class AuthService {
     }
 
   }
-}
+
