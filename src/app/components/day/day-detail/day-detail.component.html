@@ -19,12 +19,12 @@
     <br/>
     <div>
             <label>Outfit:</label>
-            <span>{{day.Outfit.OutfitName}}</span>
+            <span *ngIf='day.Outfit'>{{day.Outfit.OutfitName}}</span>
     </div>
     <br/>
     <div>
             <label>Goal:</label>
-            <span>{{day.Goal.GoalName}}</span>
+            <span *ngIf='day.Goal'>{{day.Goal.GoalName}}</span>
     </div>
     <br/>
 

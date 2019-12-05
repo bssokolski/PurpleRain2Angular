@@ -5,13 +5,13 @@
     <form (ngSubmit)="onSubmit()" [formGroup] = "editForm">
         <div>
             <div hidden>
-                <input matInput placeholder="GoalID" formControlName="GoalID" type="number" required [value] ="Goal.GoalID"/>
+                <input matInput placeholder="GoalID" formControlName="GoalID" type="number" required [value] ="goal.GoalID"/>
             </div>
             <div>
-                <input matInput placeholder="GoalName" formControlName="GoalName" type="text" required [value] ="Goal.GoalName"/>
+                <input matInput placeholder="GoalName" formControlName="GoalName" type="text" required [value] ="goal.GoalName"/>
             </div>
             <div>
-                <input matInput placeholder="GoalDescription" formControlName="GoalDescription" type="text" required [value] ="Goal.GoalDescription"/>
+                <input matInput placeholder="GoalDescription" formControlName="GoalDescription" type="text" required [value] ="goal.GoalDescription"/>
             </div>
         </div>
         <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
