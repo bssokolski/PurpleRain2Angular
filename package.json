@@ -1,13 +1,17 @@
 {
   "name": "purple-rain2-angular",
   "version": "0.0.0",
+  "engines": {
+    "node": "13.1.0"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --prod",
+    "start": "serve -s dist/Purple-Rain2-Angular"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +28,7 @@
     "@angular/router": "~8.2.14",
     "rxjs": "~6.4.0",
     "save": "^2.4.0",
+    "serve": "^11.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
