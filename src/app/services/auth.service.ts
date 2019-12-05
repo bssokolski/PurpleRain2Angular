@@ -5,8 +5,7 @@ import { Token } from '../models/Token';
 import {Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
 
-const Api_Url = 'https://localhost:44383';  // placeholder
-
+const Api_Url = 'https://localhost:44361'
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +24,7 @@ export class AuthService {
     return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
-      this.isLoggedIn.next(true);
+     this.isLoggedIn.next(true);
       this.router.navigate(['/days']);
     });  
   }
@@ -33,6 +32,7 @@ export class AuthService {
     if(!localStorage.getItem('id_token')){
       return new Observable(observer => observer.next(false));
     }
+    const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
     return this.http.get(`${Api_Url}/api/Account/UserInfo`,{ headers: this.setHeaders() });
   }
   logout(){

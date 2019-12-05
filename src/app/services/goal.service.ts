@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Goal} from '../models/Goal'
 
-const Api_Url = 'https://localhost:44383'; // placeholder
+const Api_Url = 'https://localhost:44361'; // placeholder
 
 @Injectable({
   providedIn: 'root'
