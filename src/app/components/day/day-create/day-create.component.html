@@ -1,0 +1,20 @@
+<h1>New Day</h1>
+<br/>
+
+<form (ngSubmit)="onSubmit()"[formGroup]="dayForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Day Name" formControlName="DayName" type="DayName" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Date" formControlName="Date" type="Date" />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary"type="submit">Create Day</button>
+</form>
+
+<a mat-button routerLink="/days">Back to List</a> 

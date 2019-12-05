@@ -1,0 +1,13 @@
+<h1>Delete</h1>
+<br />
+
+<div *ngIf="goal">
+    <div>
+        <span>{{goal.GoalName}}</span>
+    </div>
+    <div>
+        <span>{[goal.GoalDescription}}</span>
+    </div>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+<button mat-raised-button color="primary" routerLink="/days">Back to List</button> 

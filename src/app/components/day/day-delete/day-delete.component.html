@@ -1,0 +1,13 @@
+<h1>Delete</h1>
+<br />
+
+<div *ngIf="day">
+    <div>
+        <span>{{day.DayName}}</span>
+    </div>
+    <div>
+        <span>{[day.Date}}</span>
+    </div>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+<button mat-raised-button color="primary" routerLink="/days">Back to List</button>
