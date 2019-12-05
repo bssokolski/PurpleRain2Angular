@@ -8,6 +8,7 @@ const Api_Url = 'https://purplerain2webapi20191205112931.azurewebsites.net';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GoalService {
 
   constructor(private _http: HttpClient) { }
