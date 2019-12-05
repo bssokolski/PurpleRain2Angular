@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RouterModule} from'@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import{HttpModule} from '@angular/http';
 
 import {
   MatToolbarModule, 
@@ -87,6 +88,7 @@ const routes = [
     ReactiveFormsModule,  
     RouterModule.forRoot(routes),
     HttpClientModule,
+    HttpModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -98,7 +100,8 @@ const routes = [
     AuthService,
     DayService,
     OutfitService,
-    GoalService
+    GoalService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
