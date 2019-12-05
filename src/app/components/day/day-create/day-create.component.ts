@@ -22,7 +22,7 @@ export class DayCreateComponent implements OnInit {
   createForm(){
     this.dayForm = this.form.group({
       DayName: new FormControl,
-      Content: new FormControl
+      Date: new FormControl
     });
   }
 

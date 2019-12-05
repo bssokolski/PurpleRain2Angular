@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Outfit} from '../models/Outfit'
 
-const Api_Url = 'https://localhost:44361'; // placeholder
+const Api_Url = 'https://purplerain2webapi20191205112931.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class OutfitService {
     return this._http.get(`${Api_Url}/api/outfit`,{headers: this.getHeaders() });
   }
 
-  createOutfit(outfit:Outfit){
-    return this._http.post(`${Api_Url}/api/outfit`, outfit, { headers: this.getHeaders() });
+  createOutfit(dayId: any, outfit:Outfit){
+    return this._http.post(`${Api_Url}/api/Outfit?dayId=${dayId}`, outfit, { headers: this.getHeaders() });
   }
 
   getOutfit(id){

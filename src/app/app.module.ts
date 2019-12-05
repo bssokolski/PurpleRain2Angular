@@ -40,7 +40,7 @@ const routes = [
   {path: 'login', component: LoginComponent},
   {
   path: 'days', canActivate: [AuthGuard], children: [
-     {path: 'days', component: DayIndexComponent},
+     {path: '', component: DayIndexComponent},
      {path: 'create', component: DayCreateComponent},
      {path: 'detail/:id', component: DayDetailComponent},
      {path: 'edit/:id', component: DayEditComponent},
@@ -50,14 +50,14 @@ const routes = [
   {
   path: 'outfits', canActivate: [AuthGuard], children: [
 
-    {path: 'create', component: OutfitCreateComponent},
+    {path: 'create/:id', component: OutfitCreateComponent},
     {path: 'edit/:id', component: OutfitEditComponent},
     {path: 'delete/:id', component: OutfitDeleteComponent},
   ]
 },
  {
   path: 'goals', canActivate: [AuthGuard], children: [
-    {path: 'create', component: GoalCreateComponent},
+    {path: 'create/:id', component: GoalCreateComponent},
     {path: 'edit/:id', component: GoalEditComponent},
     {path: 'delete/:id', component: GoalDeleteComponent},
 ]

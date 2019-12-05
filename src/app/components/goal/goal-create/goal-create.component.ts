@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup,FormControl} from '@angular/forms';
 import {GoalService} from'src/app/services/goal.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-goal-create',
@@ -12,7 +12,7 @@ export class GoalCreateComponent implements OnInit {
 
   goalForm: FormGroup;
 
-  constructor(private form: FormBuilder, private goalService: GoalService, private router: Router) {
+  constructor(private form: FormBuilder, private goalService: GoalService, private router: Router,private activatedRoute: ActivatedRoute) {
     this.createForm();
    }
 
@@ -27,9 +27,11 @@ export class GoalCreateComponent implements OnInit {
   }
 
   onSubmit(){
-    this.goalService.createGoal(this.goalForm.value).subscribe(() => {
+    this.activatedRoute.paramMap.subscribe(params => {
+    this.goalService.createGoal(params.get('id'),this.goalForm.value).subscribe(() => {
       this.router.navigate(['/goals']);
     })
+  })
   } 
 
 }

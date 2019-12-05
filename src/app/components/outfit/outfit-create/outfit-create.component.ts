@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup,FormControl} from '@angular/forms';
 import {OutfitService} from'src/app/services/outfit.service';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-outfit-create',
@@ -12,7 +12,7 @@ export class OutfitCreateComponent implements OnInit {
 
   outfitForm: FormGroup;
 
-  constructor(private form: FormBuilder, private outfitService: OutfitService, private router: Router) {
+  constructor(private form: FormBuilder, private outfitService: OutfitService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.createForm();
    }
 
@@ -28,9 +28,10 @@ export class OutfitCreateComponent implements OnInit {
   }
 
   onSubmit(){
-    this.outfitService.createOutfit(this.outfitForm.value).subscribe(() => {
+    this.activatedRoute.paramMap.subscribe(params => {
+    this.outfitService.createOutfit(params.get('id'),this.outfitForm.value).subscribe(() => {
       this.router.navigate(['/outfits']);
-    })
+    }) 
+  })
   } 
-
 }

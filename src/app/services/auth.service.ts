@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import {Router} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
 
-const Api_Url = 'https://localhost:44361'
+const Api_Url = 'https://purplerain2webapi20191205112931.azurewebsites.net'
 @Injectable({
   providedIn: 'root'
 })

@@ -12,13 +12,15 @@ export class DayIndexComponent implements OnInit {
 
   constructor(private _dayService: DayService) { }
 
-  columnNames = ['details', 'DayID', 'DayName', 'Date', 'Outfit', 'Goal', 'buttons']
+  columnNames = ['details', 'DayID', 'DayName', 'Date', 'buttons']
 
   dataSource: MatTableDataSource<Day>
   
   ngOnInit() {
     this._dayService.getDays().subscribe((days: Day[])=> {
+      console.log(days)
       this.dataSource = new MatTableDataSource<Day>(days);
+      console.log(this.dataSource);
     });
   }
 }

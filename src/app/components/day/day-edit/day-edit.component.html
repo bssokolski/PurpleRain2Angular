@@ -7,15 +7,19 @@
             <div hidden>
                 <input matInput placeholder="DayID" formControlName="DayID" type="number" required [value] ="day.DayID"/>
             </div>
+            <br/>
             <div>
                 <input matInput placeholder="DayName" formControlName="DayName" type="text" required [value] ="day.DayName"/>
             </div>
+            <br/>
             <div>
-                <input matInput placeholder="Date" formControlName="Date" type="text" required [value] ="day.DayName"/>
+                <input matInput placeholder="Date" formControlName="Date" type="text" required [value] ="day.Date"/>
             </div>
+            <br/>
+            <br/>
         </div>
         <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
     </form>
 </div>
 
-<a mat-button routerLin='notes'>Back to List</a>
+<a mat-button routerLin='days'>Back to List</a>

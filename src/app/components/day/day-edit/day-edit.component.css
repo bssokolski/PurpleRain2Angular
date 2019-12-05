@@ -1,3 +1,9 @@
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: purple;
+    margin-left: 0px;
+    text-align:center;
+}
 button {
     margin-right: 0.5em;
     background-color: darkorchid;
@@ -8,4 +14,10 @@ button {
     margin-left: 0px;
     text-align:center;
 
+}
+form{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 0px;
+    text-align:center;
 }

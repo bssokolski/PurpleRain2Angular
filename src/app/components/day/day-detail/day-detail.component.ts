@@ -18,6 +18,7 @@ export class DayDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(routeData => {
       this.dayService.getDay(routeData.get('id')).subscribe((day: Day) => {
         this.day = day;
+        console.log(this.day)
     });
   });
 }

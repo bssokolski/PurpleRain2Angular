@@ -6,14 +6,30 @@
         <label>Day ID#:</label>
         <span>{{day.DayID}}</span>
     </div>
+    <br/>
     <div>
             <label>Day Name:</label>
             <span>{{day.DayName}}</span>
     </div>
+    <br/>
     <div>
             <label>Date:</label>
             <span>{{day.Date}}</span>
     </div>
+    <br/>
+    <div>
+            <label>Outfit:</label>
+            <span>{{day.Outfit.OutfitName}}</span>
+    </div>
+    <br/>
+    <div>
+            <label>Goal:</label>
+            <span>{{day.Goal.GoalName}}</span>
+    </div>
+    <br/>
+
+    <button mat-raised-button routerLink="/goals/create/{{day.DayID}}">Change Goal</button>
+    <button mat-raised-button routerLink="/outfits/create/{{day.DayID}}">Change Outfit</button>
 </div>
 
-<button mat-raised-button color="primary" routerLink="/days ">Back to List</button>
+
