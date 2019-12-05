@@ -1,0 +1,21 @@
+<h1>Edit</h1>
+<br />
+
+<div *ngIf="goal">
+    <form (ngSubmit)="onSubmit()" [formGroup] = "editForm">
+        <div>
+            <div hidden>
+                <input matInput placeholder="GoalID" formControlName="GoalID" type="number" required [value] ="Goal.GoalID"/>
+            </div>
+            <div>
+                <input matInput placeholder="GoalName" formControlName="GoalName" type="text" required [value] ="Goal.GoalName"/>
+            </div>
+            <div>
+                <input matInput placeholder="GoalDescription" formControlName="GoalDescription" type="text" required [value] ="Goal.GoalDescription"/>
+            </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    </form>
+</div>
+
+<a mat-button routerLin='notes'>Back to List</a> 

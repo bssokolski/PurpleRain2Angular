@@ -1,0 +1,24 @@
+<h1>Edit</h1>
+<br />
+
+<div *ngIf="goal">
+    <form (ngSubmit)="onSubmit()" [formGroup] = "editForm">
+        <div>
+            <div hidden>
+                <input matInput placeholder="OutfitID" formControlName="OutfitID" type="number" required [value] ="Outfit.OutfitID"/>
+            </div>
+            <div>
+                <input matInput placeholder="OutfitName" formControlName="OutfitName" type="text" required [value] ="Outfit.OutfitName"/>
+            </div>
+            <div>
+                <input matInput placeholder="Top" formControlName="Top" type="text" required [value] ="Outfit.Top"/>
+            </div>
+            <div>
+                <input matInput placeholder="Bottom" formControlName="Bottom" type="text" required [value] ="Outfit.Bottom"/>
+            </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    </form>
+</div>
+
+<a mat-button routerLin='notes'>Back to List</a> 

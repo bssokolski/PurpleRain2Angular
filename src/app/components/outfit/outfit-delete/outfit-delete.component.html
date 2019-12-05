@@ -1,0 +1,16 @@
+<h1>Delete</h1>
+<br />
+
+<div *ngIf="goal">
+    <div>
+        <span>{{outfit.OutfitName}}</span>
+    </div>
+    <div>
+        <span>{{outfit.Top}}</span>
+    </div>
+    <div>
+            <span>{{outfit.Bottom}}</span>
+    </div>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+<button mat-raised-button color="primary" routerLink="/days">Back to List</button>  

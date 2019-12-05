@@ -1,0 +1,17 @@
+<h1>Outfit</h1>
+<br/>
+
+<form (ngSubmit)="onSubmit()"[formGroup]="outfitForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Outfit Name" formControlName="OutfitName" type="OutfitName" required />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary"type="submit">Create Outfit</button>
+</form>
+
+<a mat-button routerLink="/days">Back to List</a>  
+
+<p>Thank-you!</p>
